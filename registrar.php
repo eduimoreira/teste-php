@@ -57,18 +57,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Registrar</title>
 </head>
-<link rel="stylesheet" type="text/css" href="style2.css">
+<link rel="stylesheet" href="stylee.css">
 <body >
 
-    <div class="wrapper">
-    <form class="form-signin" method="post">       
-      <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="usuario" placeholder="Usuario" required="" autofocus="" />
-      <input type="password" class="form-control" name="senha" placeholder="Password" required=""/>      
-      
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>   
-    </form>
-  </div>
+<div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Cadastre-se</h2>
+
+  <form  method= "post"class="login-container" >
+    <p><input type="text" name="usuario"placeholder="Usuario"></p>
+    <p><input type="password" name="senha" placeholder="Senha"></p>
+    <p><input type="submit" value="Cadastrar"></p>
+  </form>
+</div>
+
 
 </body>
 </html>
