@@ -32,7 +32,7 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
             $codigo = $mysqli->real_escape_string($_POST['pd_codigo']); 
             
 
-            $sql_code = "SELECT * FROM produtos WHERE pd_nome= '$produto' ";
+            $sql_code = "SELECT * FROM produtos WHERE pd_codigo= '$codigo' ";
             $sql_query = $mysqli->query($sql_code) or die("Deu pau no banco: ". $mysqli->error);
 
             $quantidade = $sql_query->num_rows;
@@ -55,7 +55,7 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
 
                  else{
 
-            phpAlert ("Já existe um produto cadastrado com este nome, por favor tente outro!");
+            phpAlert ("Já existe um produto cadastrado com este codigo, por favor tente outro!");
         }
 
  }
@@ -89,11 +89,11 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
 
 					<label>
 					Peso unitario:
-					<input type="float" name="peso"/><br/>
+					<input type="double" name="peso"/><br/>
 				</label>
 						<label>
 				codigo do produto:
-					<input type="number" name="pd_codigo"/><br/>
+					<input type="text" name="pd_codigo"/><br/>
 				</label>
 				<input type="submit" value="Salvar produto"/><br/>
 			
