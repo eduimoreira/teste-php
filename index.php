@@ -6,10 +6,10 @@
 
 
         if (strlen($_POST['usuario'])==0) {
-             echo "Preencha a disgrassa do usuario";   
+             echo "Preencha o campo usuario";   
             
         }elseif (strlen($_POST['senha'])==0) {
-            echo "Preencha a disgrassa da senha";
+            echo "Preencha o campo senha";
 
 
 
@@ -19,7 +19,7 @@
             $usuario = $mysqli->real_escape_string($_POST['usuario']);
             $senha = $mysqli->real_escape_string($_POST['senha']);
 
-            $sql_code = "SELECT * FROM usuarios WHERE user= '$usuario' AND senha= '$senha' ";
+            $sql_code = "SELECT * FROM usuarios WHERE user= '$usuario' and senha= '$senha' ";
             $sql_query = $mysqli->query($sql_code) or die("Deu pau no banco: ". $mysqli->error);
 
             $quantidade = $sql_query->num_rows;
