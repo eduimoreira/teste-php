@@ -17,8 +17,8 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
  }elseif(strlen($_POST['quantidade'])==0){
  							echo "Preencha o campo quantidade";
 
- }elseif(strlen($_POST['peso'])==0){
- 							echo "Preencha o campo peso";
+ }elseif(strlen($_POST['preco'])==0){
+ 							echo "Preencha o campo preco";
 
  }elseif(strlen($_POST['pd_codigo'])==0){
  							echo "Preencha o campo codigo";
@@ -26,9 +26,9 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
 
  else{
 
- 		     		$produto = $mysqli->real_escape_string($_POST['produto_nome']);
+ 		    $produto = $mysqli->real_escape_string($_POST['produto_nome']);
             $quantidadepd = $mysqli->real_escape_string($_POST['quantidade']);
-            $peso = $mysqli->real_escape_string($_POST['peso']);
+            $preco = $mysqli->real_escape_string($_POST['preco']);
             $codigo = $mysqli->real_escape_string($_POST['pd_codigo']); 
             
 
@@ -41,8 +41,8 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
             if ($quantidade==0) {
 
             
-                $sql_code2 =" INSERT  INTO produtos (pd_nome, pd_quantidade, pd_peso, pd_codigo)
-                VALUES ('$produto','$quantidadepd','$peso','$codigo')";
+                $sql_code2 =" INSERT  INTO produtos (pd_nome, pd_quantidade, pd_preco, pd_codigo)
+                VALUES ('$produto','$quantidadepd','$preco','$codigo')";
                 $sql_query2 = $mysqli->query($sql_code2) or die("Deu pau no banco: ". $mysqli->error);
 
                
@@ -88,8 +88,8 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
 				</label>
 
 					<label>
-					Peso unitario:
-					<input type="double" name="peso"/><br/>
+					Preço:
+					<input type="double" name="preco"/><br/>
 				</label>
 						<label>
 				codigo do produto:
@@ -107,7 +107,7 @@ if(isset($_POST['produto_nome']) || isset($_POST['quantidade'])   ){
 
 </p>
 <p>
-<a href="index.php">Ver produtos</a>
+<a href="verprodutos.php">Ver produtos</a>
 </p>
 </body>
 
