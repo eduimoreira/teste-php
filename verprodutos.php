@@ -20,15 +20,36 @@ include('conexao.php');
 
 	   	 echo "Produto: ".$row_prod ['pd_nome']."<br>";
 	   	 echo "Quantidade: ".$row_prod ['pd_quantidade']."<br>";
+	   	 echo "Preco: ".$row_prod ['pd_preco']."$<br>";
 	   	 echo "Codigo: ".$row_prod ['pd_codigo']."<br><hr>";
 
 	   }
 
 
-	?>
+
+
+?>
+
+
+
 	
+			
+
+
+
+	<?php 
+
+
+
+
+	?>
+
+
 	 <p>  
 <a href="painel.php">Voltar</a>
+</p>
+	 <p>  
+<a href="editar.php">Editar</a>
 </p>
 </body>
 </html>
