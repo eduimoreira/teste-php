@@ -16,16 +16,27 @@ if(isset($_POST['pd_codigo_e']) ){
     if ($quantidade==1) {
     	 if (strlen($_POST['produto_nome_e'])!=0) {
     	 	 $produtoe = $mysqli->real_escape_string($_POST['produto_nome_e']);
-    	 	 $sql_code_nome = "UPDATE produtos SET pd_nome='$produtoe' WHERE pd_codigo='$codigoe' ";
-    	 	 $sql_query_nome = $mysqli->query($sql_code_nome) or die("Deu pau no banco: ". $mysqli->error);
+    	 	 $sql_code_nome = "
+    	 	 UPDATE produtos 
+    	 	 SET pd_nome='$produtoe' 
+    	 	 WHERE pd_codigo='$codigoe' ";
+    	 	 $sql_query_nome = $mysqli->query($sql_code_nome) 
+    	 	 										or die("Deu pau no banco: ". $mysqli->error);
 
-             }
+             }  
+             if (strlen($_POST['quantidade_e'])!=0) {
+    	 	 $quantidadee = $mysqli->real_escape_string($_POST['quantidade_e']);
+    	 	 $sql_code_quantidade = "
+    	 	 UPDATE produtos
+    	 	 SET pd_quantidade='$quantidadee'
+    	 	 WHERE pd_codigo='$codigoe' ";
+    	 	 $sql_query_quantidade = $mysqli->query($sql_code_quantidade) 
+    	 	 													or die("Deu pau no banco: ". $mysqli->error);
 
-            
-               
+             }                                              
                 
                 phpAlert("Alterações feitas com sucesso!!");
-
+                phpAlert("Espaços em branco não alteram os itens!");
                                               
                 }
 

@@ -1,5 +1,8 @@
  <?php
     include('conexao.php');
+    function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
     if(isset($_POST['usuario']) || isset($_POST['senha'])   ){
 
 
@@ -31,13 +34,13 @@
                 VALUES ('$usuario','$senha')";
                 $sql_query2 = $mysqli->query($sql_code2) or die("Deu pau no banco: ". $mysqli->error);
 
-                if(!isset($_SESSION)){
-                      session_start();  
-
-                }
-                $_SESSION['id']= $usuario['id'];
-                $_SESSION['user']= $usuario['usuario'];
-                header('Location: painel.php');
+                
+               echo "<script>
+                alert('Usuario registrado com sucesso');
+                window.location.href='index.php';
+                     </script>";
+                
+                
 
                 }
 
@@ -70,7 +73,13 @@
     <p><input type="password" name="senha" placeholder="Senha"></p>
     <p><input type="submit" value="Cadastrar"></p>
   </form>
+
+
 </div>
+
+ <center> <p>  
+<a href="index.php">Voltar</a>
+</p></center>
 
 
 </body>
